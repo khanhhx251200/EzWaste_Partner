@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "148177650892",
+    "project_id": "recycleapp-7cf23",
+    "storage_bucket": "recycleapp-7cf23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148177650892:android:0fa16913e43f25e1a36e69",
+        "android_client_info": {
+          "package_name": "com.teamdrivers.shipper_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148177650892-u6gtm3opmlemtdb1b4h74nhtagkn9ph3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMoeWdDIX0lES2iCE0XnrtDCi8h3xauV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148177650892-u6gtm3opmlemtdb1b4h74nhtagkn9ph3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

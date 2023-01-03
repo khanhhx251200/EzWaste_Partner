@@ -1,0 +1,62 @@
+name: app_shipper
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+  provider: ^6.0.0 # for State management
+  flutter_styled_toast: ^2.0.0 
+  flutter_svg: ^1.0.1
+  flutter_switch: ^0.3.2
+  shared_preferences: ^2.0.12
+  pull_to_refresh: ^2.0.0
+  number_inc_dec: ^0.8.0
+  table_calendar: ^3.0.7
+  modal_bottom_sheet: ^2.0.1
+
+  #rest API
+  dio: ^4.0.4
+  http: ^0.13.4
+
+  intl: ^0.17.0
+
+  flutter_launcher_icons: ^0.10.0
+
+  #  Notification firebase
+  cloud_firestore: ^3.1.5
+  firebase_core: ^1.10.6
+  firebase_messaging: ^11.2.4
+  flutter_local_notifications: ^9.1.5
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: NotoSans
+      fonts:
+        - asset: assets/fonts/noto_sans/NotoSans-Medium.ttf
+        - asset: assets/fonts/noto_sans/NotoSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/noto_sans/NotoSans-Light.ttf
+          weight: 300
