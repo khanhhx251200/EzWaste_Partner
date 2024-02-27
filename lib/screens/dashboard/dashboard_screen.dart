@@ -4,6 +4,7 @@ import 'package:app_shipper/screens/dashboard/activities/activities_page.dart';
 import 'package:app_shipper/screens/dashboard/create_order/create_order_page.dart';
 import 'package:app_shipper/screens/dashboard/home/home_page.dart';
 import 'package:app_shipper/screens/dashboard/tracking/tracking_page.dart';
+import 'package:app_shipper/screens/home/components/navigation_drawer_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'components/appbar_dashboard.dart';
@@ -16,6 +17,7 @@ class DashBoardScreen extends StatefulWidget {
   @override
   State<DashBoardScreen> createState() => _DashBoardScreenState();
 }
+final globalDashboardKey = GlobalKey<ScaffoldState>();
 
 class _DashBoardScreenState extends State<DashBoardScreen> {
   final double heightAppBar = 60;
@@ -32,8 +34,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
 
   @override
   void initState() {
-    currentPage = pages[0];
     super.initState();
+    currentPage = pages[0];
   }
 
   onTapHandler(int index) {
@@ -47,6 +49,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   Widget build(BuildContext context) {
     Color colorUnselected = Colors.grey.withOpacity(0.75);
     return Scaffold(
+      key: globalDashboardKey,
+      drawer: const NavigationDrawerWidget(),
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(heightAppBar),
           child: const AppbarDashboard()),

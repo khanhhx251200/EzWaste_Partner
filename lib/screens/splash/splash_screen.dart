@@ -24,10 +24,9 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-  bool _visible = false;
+  final bool _visible = false;
   late AnimationController animationController;
   Animation<double>? animation;
-  final _prefs = PreferencesService();
 
   startTime() async {
     Duration _duration = const Duration(seconds: 2);
@@ -38,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
     animation =
         CurvedAnimation(parent: animationController, curve: Curves.easeOut);
 

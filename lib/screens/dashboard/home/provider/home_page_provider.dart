@@ -8,7 +8,6 @@ import 'package:app_shipper/core/rest_api/api.dart';
 import 'package:flutter/material.dart';
 
 class HomePageProvider extends ChangeNotifier {
-  final _api = Api.apiProvider;
   final _bookingService = BookingService();
 
   List<Booking> _listBooking = [];
@@ -36,11 +35,7 @@ class HomePageProvider extends ChangeNotifier {
 
   Future<List<Booking>> getBookings() async {
     _listBooking.clear();
-    notifyListeners();
-    _listBooking = await _bookingService.getBookings(prepareBodySearch());
-    print('list: $_listBooking');
-    notifyListeners();
-    return _listBooking;
+    return await _bookingService.getBookings(prepareBodySearch());
   }
 
   BookingSearch prepareBodySearch() {

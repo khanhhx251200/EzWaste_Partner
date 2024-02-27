@@ -28,7 +28,7 @@ class _FilterActivitiesState extends State<FilterActivities> {
             child: inputDateSearch()),
         const SizedBox(width: size8),
         DefaultButton(
-          text: 'Bộ lọc',
+          text: kFilter,
           color: kGreenColor,
           press: () async {
             final result = await Navigator.pushNamed(context, FilterCalendar.routeName);

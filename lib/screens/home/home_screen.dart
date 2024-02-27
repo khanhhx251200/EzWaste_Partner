@@ -2,17 +2,14 @@ import 'package:app_shipper/core/auth_provider.dart';
 import 'package:app_shipper/core/constants/color_constants.dart';
 import 'package:app_shipper/core/constants/size_constants.dart';
 import 'package:app_shipper/core/model/login_response.dart';
-import 'package:app_shipper/screens/home/components/item_working.dart';
 import 'package:app_shipper/screens/home/components/list_complete.dart';
 import 'package:app_shipper/screens/home/components/list_order_organic.dart';
 import 'package:app_shipper/screens/home/components/list_order_plastic.dart';
-import 'package:app_shipper/screens/home/components/list_received.dart';
 import 'package:app_shipper/screens/home/components/list_worked.dart';
 import 'package:app_shipper/screens/home/components/navigation_drawer_widget.dart';
 import 'package:app_shipper/screens/home/provider/home_provider.dart';
 import 'package:app_shipper/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
 
 import 'components/list_next_dates.dart';

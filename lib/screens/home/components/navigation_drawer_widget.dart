@@ -20,7 +20,6 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     return Drawer(
       child: Material(
-        color: kPrimaryColor,
         child: ListView(
           children: [
             buildHeader(
@@ -60,8 +59,8 @@ class NavigationDrawerWidget extends StatelessWidget {
     required IconData icon,
     VoidCallback? onClicked,
   }) {
-    const color = Colors.white;
-    final hoverColor = Colors.white70;
+    const color = kPrimaryLightColor;
+    final hoverColor = kPrimaryLightColor.withOpacity(0.8);
 
     return ListTile(
       leading: Icon(icon, color: color),
@@ -97,25 +96,21 @@ class NavigationDrawerWidget extends StatelessWidget {
       InkWell(
         onTap: onClicked,
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 40),
-          child: Row(
+          padding: const EdgeInsets.symmetric(vertical: size24, horizontal: size16),
+          color: kPrimaryLightColor,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(width: 20),
               CircleAvatar(radius: 30, backgroundImage: AssetImage(urlImage)),
-              const SizedBox(width: 20),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    name,
-                    style: const TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    phone,
-                    style: const TextStyle(fontSize: 14, color: Colors.white),
-                  ),
-                ],
+              const SizedBox(height: 20),
+              Text(
+                name,
+                style: const TextStyle(fontSize: 20, color: kWhiteColor, fontWeight: FontWeight.w700),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                phone,
+                style: const TextStyle(fontSize: 14, color: kWhiteColor),
               ),
             ],
           ),

@@ -23,10 +23,11 @@ class _HomePageState extends State<HomePage> {
     return Consumer<HomePageProvider>(
       builder: (context, value, child) {
         return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TitlePage(title: kCalendarBooking),
             Padding(
-              padding: const EdgeInsets.all(size8),
+              padding: const EdgeInsets.symmetric(horizontal: size20, vertical: size8),
               child: Text.rich(TextSpan(text: 'Khu vực thu gom: ', children: [
                 TextSpan(
                     text: context.read<AuthProvider>().userInfo!.tenKhuVuc,

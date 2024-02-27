@@ -30,7 +30,6 @@ class _ListBookingState extends State<ListBooking> {
 
   @override
   Widget build(BuildContext context) {
-    final _size = MediaQuery.of(context).size;
 
     return Consumer<HomePageProvider>(
       builder: (context, provider, child) => Column(

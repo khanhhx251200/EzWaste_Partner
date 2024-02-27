@@ -26,20 +26,20 @@ class _FilterBottomState extends State<FilterBottom> {
 
   void addTypes() {
     listType.add(BoxSelection(
-        title: kOrganicRecycle, isSelected: false, options: ORGANIC));
+        title: kOrganicRecycle, isSelected: false, options: FILTER_ORGANIC));
     listType.add(BoxSelection(
-        title: kPlasticRecycle, isSelected: false, options: PLASTIC));
+        title: kPlasticRecycle, isSelected: false, options: FILTER_PLASTIC));
   }
 
   void addStatus() {
     listStatus.add(
-        BoxSelection(title: kNotDoing, isSelected: false, options: ORGANIC));
+        BoxSelection(title: kNotDoing, isSelected: false, options: FILTER_NOT_COLLECT));
     listStatus
-        .add(BoxSelection(title: kRefuse, isSelected: false, options: PLASTIC));
+        .add(BoxSelection(title: kWaitConfirm, isSelected: false, options: FILTER_WAIT_CONFIRM));
     listStatus
-        .add(BoxSelection(title: kRefuse, isSelected: false, options: PLASTIC));
+        .add(BoxSelection(title: kRefuse, isSelected: false, options: FILTER_REFUSE));
     listStatus.add(BoxSelection(
-        title: kWaitConfirm, isSelected: false, options: kCompleted));
+        title: kCompleted, isSelected: false, options: FILTER_COMPLETE));
   }
 
   @override
@@ -47,7 +47,7 @@ class _FilterBottomState extends State<FilterBottom> {
     return Container(
       height: 350,
       padding:
-          const EdgeInsets.symmetric(vertical: size14, horizontal: size36),
+          const EdgeInsets.symmetric(vertical: size14, horizontal: size28),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -90,7 +90,7 @@ class _FilterBottomState extends State<FilterBottom> {
           style: TextStyle(fontWeight: FontWeight.w500, fontSize: size18),
         ),
         Wrap(
-          alignment: WrapAlignment.spaceBetween,
+          alignment: WrapAlignment.start,
           children: listStatus.map((type) => FilterButton(selection: type)).toList(),
         ),
       ],

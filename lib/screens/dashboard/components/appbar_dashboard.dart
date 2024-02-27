@@ -1,6 +1,9 @@
+import 'package:app_shipper/core/constants/color_constants.dart';
 import 'package:app_shipper/core/constants/size_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../dashboard_screen.dart';
 class AppbarDashboard extends StatelessWidget {
   const AppbarDashboard({
     Key? key,
@@ -9,10 +12,16 @@ class AppbarDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      // leading: IconButton(
-      //   onPressed: () {},
-      //   icon: Icon(Icons.menu),
-      // ),
+      leading: IconButton(
+        icon: const Icon(
+          Icons.menu,
+          color: kPrimaryLightColor,
+          size: 32,
+        ),
+        onPressed: () {
+          globalDashboardKey.currentState!.openDrawer();
+        },
+      ),
       centerTitle: false,
       title: Image.asset('assets/images/logo_app.png', height: 48),
       actions: [

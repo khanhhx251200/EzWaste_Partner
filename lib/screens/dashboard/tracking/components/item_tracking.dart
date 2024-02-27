@@ -52,28 +52,23 @@ class ItemTracking extends StatelessWidget {
     return Column(
       children: [
         itemBody(
-            Icons.date_range, convertTimeStampToString(booking.dateBooking!)),
-        itemBody(Icons.location_on, booking.address!),
+            Icons.date_range, convertTimeStampToString(booking.dateBooking!),
+            colorIcon: valueByType(booking.type, kOrganicColor, kPlasticColor)),
+        itemBody(Icons.location_on, booking.address!,
+            colorIcon: valueByType(booking.type, kOrganicColor, kPlasticColor)),
         itemBody(Icons.delete_outline,
-            valueByType(booking.type, kOrganicRecycle, kPlasticRecycle)),
-        booking.status! >= 3
-            ? itemBody(const IconData(0xf24e, fontFamily: 'MaterialIcons'),
-            booking.money.toString() + ' VNĐ')
-            : const SizedBox(),
+            valueByType(booking.type, kOrganicRecycle, kPlasticRecycle),
+            colorIcon: valueByType(booking.type, kOrganicColor, kPlasticColor)),
         booking.status! >= 3
             ? itemBody(const IconData(0xe235, fontFamily: 'MaterialIcons'),
-            booking.mass.toString() + ' kg')
+            booking.mass.toString() + ' kg',
+            colorIcon:
+            valueByType(booking.type, kOrganicColor, kPlasticColor))
             : const SizedBox(),
-        (booking.status! <= 3 &&
-            booking.noteSeller != null &&
-            booking.noteSeller! != '') ||
-            (booking.status! == 4 &&
-                booking.feedback != null &&
-                booking.feedback! != '') ||
-            (booking.status! == 5 &&
-                booking.reason != null &&
-                booking.reason! != '')
-            ? itemBody(Icons.event_note, noteBooking(booking))
+        booking.noteSeller != null && booking.noteSeller != ''
+            ? itemBody(Icons.event_note, booking.noteSeller!.trim(),
+            colorIcon:
+            valueByType(booking.type, kOrganicColor, kPlasticColor))
             : const SizedBox(),
         const Divider(),
         itemBody(statusIcon(booking.status!), statusString(booking.status!),

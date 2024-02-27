@@ -1,4 +1,5 @@
 import 'package:app_shipper/screens/sign_in/sign_in_screen.dart';
+import 'package:app_shipper/services/share_preferences_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +26,8 @@ class Logging extends Interceptor {
       'ERROR[${err.response?.statusCode}] => PATH: ${err.requestOptions.path}',
     );
     if (err.response?.statusCode == 403) {
+      PreferencesService preferencesService = PreferencesService();
+      preferencesService.logout();
       navigatorKey.currentState!.pushNamedAndRemoveUntil(
           SignInScreen.routeName, (Route<dynamic> route) => false);
     }
